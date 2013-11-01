@@ -13,7 +13,7 @@ you to visualize how your time is spent and helps you to be more productive.
 
 == Description ==
 
-UDSSL Time Tracker helps you to track your time easily with an intutive interface. You
+UDSSL Time Tracker helps you to track your time easily with an intuitive interface. You
 can easily track your time with a few clicks. Using presets you can track frequent tasks instantly.
 Once you setup your tasks, projects and categories, you only have to enter an optional description
 on how a particular time period is spent.
