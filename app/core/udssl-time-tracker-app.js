@@ -1,6 +1,6 @@
 var app = app || {};
 var ENTER_KEY = 13;
-$(function() {
+jQuery(function() {
     app.TimeSlots = new TimeSlots();
     app.Categories = new Categories();
     app.Projects = new Projects();

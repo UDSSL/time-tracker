@@ -7,23 +7,23 @@ function updateClock()
     var currentTimeSeconds = moment(currentTime).format('ss');
 
     if('00' === currentTimeSeconds){
-        $('#t_end').val(currentTimeString);
+        jQuery('#t_end').val(currentTimeString);
     }
 
-    $('#clock').text(currentTimeStringFull);
+    jQuery('#clock').text(currentTimeStringFull);
 
     /**
      * Time Difference
      */
-    var a = moment($('#t_end').val(), 'YYYY-MM-DD hh:mm A');
-    var b = moment($('#t_start').val(), 'YYYY-MM-DD hh:mm A');
-    $('#t_duration').val(a.diff(b, 'minutes'));
+    var a = moment(jQuery('#t_end').val(), 'YYYY-MM-DD hh:mm A');
+    var b = moment(jQuery('#t_start').val(), 'YYYY-MM-DD hh:mm A');
+    jQuery('#t_duration').val(a.diff(b, 'minutes'));
 }
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     var currentTime = new Date();
-    $('#t_end').val(moment(currentTime).format('YYYY-MM-DD hh:mm A'));
-    $('#pay_time').val(moment(currentTime).format('YYYY-MM-DD hh:mm A'));
+    jQuery('#t_end').val(moment(currentTime).format('YYYY-MM-DD hh:mm A'));
+    jQuery('#pay_time').val(moment(currentTime).format('YYYY-MM-DD hh:mm A'));
 
     updateClock();
     setInterval('updateClock()', 1000 );
@@ -35,20 +35,20 @@ function updateClockLocal()
     var currentTime = new Date();
     var currentTimeString = moment(currentTime).format('YYYY-MM-DD hh:mm:ss A');
 
-    $('#toolbar_clock').text(currentTimeString);
+    jQuery('#toolbar_clock').text(currentTimeString);
 
     /**
      * Time Difference
      */
     var a = moment(currentTime);
-    var b = moment($('#t_start').val(), 'YYYY-MM-DD hh:mm A');
-    $('#toolbar_duration').text( a.diff(b, 'minutes'));
+    var b = moment(jQuery('#t_start').val(), 'YYYY-MM-DD hh:mm A');
+    jQuery('#toolbar_duration').text( a.diff(b, 'minutes'));
 }
 
 function t_summary(){
-    $('#t_summary_table').html('');
-    $('#t_project_summary_table').html('');
-    $('#t_task_summary_table').html('');
+    jQuery('#t_summary_table').html('');
+    jQuery('#t_project_summary_table').html('');
+    jQuery('#t_task_summary_table').html('');
 
     var summary_table = '';
 
@@ -90,7 +90,7 @@ function t_summary(){
         t_minutes = '0' + t_minutes;
     }
 
-    $('#t_summary_total').html('<h1>' + t_hours + ':' + t_minutes + '</h1>');
+    jQuery('#t_summary_total').html('<h1>' + t_hours + ':' + t_minutes + '</h1>');
 
     var categories = [];
     var series = [];
@@ -101,7 +101,7 @@ function t_summary(){
 
     });
 
-    $('#t_summary_table').highcharts({
+    jQuery('#t_summary_table').highcharts({
         chart: {
             type: 'column'
         },
@@ -131,7 +131,7 @@ function t_summary(){
 
     });
 
-    $('#t_project_summary_table').highcharts({
+    jQuery('#t_project_summary_table').highcharts({
         chart: {
             type: 'column'
         },
@@ -162,7 +162,7 @@ function t_summary(){
     });
 
 
-    $('#t_task_summary_table').highcharts({
+    jQuery('#t_task_summary_table').highcharts({
         chart: {
             type: 'column'
         },
@@ -185,7 +185,7 @@ function t_summary(){
 
 }
 
-$(document).ready(function() {
+jQuery(document).ready(function() {
     Highcharts.setOptions({
             chart: {
                 plotShadow: true,
@@ -214,83 +214,83 @@ $(document).ready(function() {
             }
         });
 
-    $('.t_add').click(function(){
-        var id = $(this).attr('id');
+    jQuery('.t_add').click(function(){
+        var id = jQuery(this).attr('id');
         var parts = id.split('_');
 
-        var newTime = moment($('#t_start').val(), 'YYYY-MM-DD hh:mm A').add('minutes', parts[2]);
+        var newTime = moment(jQuery('#t_start').val(), 'YYYY-MM-DD hh:mm A').add('minutes', parts[2]);
         newTime = moment(newTime).format('YYYY-MM-DD hh:mm A');
-        $('#t_end').val(newTime);
+        jQuery('#t_end').val(newTime);
 
     });
 
-    $('.t_preset').click(function(){
-        var id = $(this).attr('id');
+    jQuery('.t_preset').click(function(){
+        var id = jQuery(this).attr('id');
         var parts = id.split('_');
 
-        $('#t_category')
+        jQuery('#t_category')
             .val(parts[2])
             .trigger('change');
 
-        $('#p_category_list')
+        jQuery('#p_category_list')
             .val(parts[2])
             .trigger('change');
 
-        $('#t_project')
+        jQuery('#t_project')
             .val(parts[3])
             .trigger('change');
 
-        $('#ta_project_list')
+        jQuery('#ta_project_list')
             .val(parts[3])
             .trigger('change');
 
-        $('#t_task')
+        jQuery('#t_task')
             .val(parts[4])
             .trigger('change');
     });
 
-    $('#t_add_minute').click(function(){
-        var newTime = moment($('#t_end').val(), 'YYYY-MM-DD hh:mm A').add('minutes', 1);
+    jQuery('#t_add_minute').click(function(){
+        var newTime = moment(jQuery('#t_end').val(), 'YYYY-MM-DD hh:mm A').add('minutes', 1);
         newTime = moment(newTime).format('YYYY-MM-DD hh:mm A');
-        $('#t_end').val(newTime);
+        jQuery('#t_end').val(newTime);
     });
 
-    $('#t_subtract_minute').click(function(){
-        var newTime = moment($('#t_end').val(), 'YYYY-MM-DD hh:mm A').subtract('minutes', 1);
+    jQuery('#t_subtract_minute').click(function(){
+        var newTime = moment(jQuery('#t_end').val(), 'YYYY-MM-DD hh:mm A').subtract('minutes', 1);
         newTime = moment(newTime).format('YYYY-MM-DD hh:mm A');
-        $('#t_end').val(newTime);
+        jQuery('#t_end').val(newTime);
     });
 
-    $('#t_now_minute').click(function(){
+    jQuery('#t_now_minute').click(function(){
         var newTime = moment();
         newTime = moment(newTime).format('YYYY-MM-DD hh:mm A');
-        $('#t_end').val(newTime);
+        jQuery('#t_end').val(newTime);
     });
 
-    $('#t_summary_button').click(function(){
+    jQuery('#t_summary_button').click(function(){
         t_summary();
     });
 
-    $('#pay_calculate').click(function(){
-        var charge = $('#pay_paid').val() / 10;
-        var effective = $('#pay_paid').val() - charge;
-        $('#pay_charges').val(charge);
-        $('#pay_effective').val(effective);
+    jQuery('#pay_calculate').click(function(){
+        var charge = jQuery('#pay_paid').val() / 10;
+        var effective = jQuery('#pay_paid').val() - charge;
+        jQuery('#pay_charges').val(charge);
+        jQuery('#pay_effective').val(effective);
     });
 
-    $('.pay_preset').click(function(){
-        var id = $(this).attr('id');
+    jQuery('.pay_preset').click(function(){
+        var id = jQuery(this).attr('id');
         var parts = id.split('_');
 
-        $('#pay_category')
+        jQuery('#pay_category')
             .val(parts[2])
             .trigger('change');
 
-        $('#pay_project')
+        jQuery('#pay_project')
             .val(parts[3])
             .trigger('change');
 
-        $('#pay_task')
+        jQuery('#pay_task')
             .val(parts[4])
             .trigger('change');
     });

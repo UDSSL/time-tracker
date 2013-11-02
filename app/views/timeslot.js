@@ -4,7 +4,7 @@ app.TimeSlotView = Backbone.View.extend({
 
     tagName: 'tr',
 
-    template: _.template( $('#time-slot-template').html() ),
+    template: _.template( jQuery('#time-slot-template').html() ),
 
     initialize: function() {
         this.listenTo(this.model, 'change', this.render);

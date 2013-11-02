@@ -2,7 +2,7 @@ var app = app || {};
 app.PaymentView = Backbone.View.extend({
     tagName: 'tr',
 
-    template: _.template( $('#payment-template').html() ),
+    template: _.template( jQuery('#payment-template').html() ),
 
     initialize: function() {
         this.listenTo(this.model, 'change', this.render);

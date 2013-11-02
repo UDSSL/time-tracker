@@ -20,39 +20,39 @@ app.TaskManageView = Backbone.View.extend({
     },
 
     render: function() {
-        var task_select_html = _.template($('#task-select-template').html(), {
+        var task_select_html = _.template(jQuery('#task-select-template').html(), {
             tasks : app.Tasks.toJSON(),
             project: 'none'
         });
-        this.$('#ta_task_list').html(task_select_html);
+        jQuery('#ta_task_list').html(task_select_html);
     },
 
     renderProjects: function() {
-        var project_select_html = _.template($('#project-select-template').html(), {
+        var project_select_html = _.template(jQuery('#project-select-template').html(), {
             projects : app.Projects.toJSON(),
             category: 'none'
         });
-        this.$('#ta_project_list').html(project_select_html);
+        jQuery('#ta_project_list').html(project_select_html);
     },
 
     ta_add_task: function( event ) {
-        if (!this.$('#ta_task_name').val().trim() || !this.$('#ta_task_description').val().trim()) {
+        if (!jQuery('#ta_task_name').val().trim() || !jQuery('#ta_task_description').val().trim()) {
             return;
         }
         app.Tasks.create({
-            ta_project : this.$('#ta_project_list').val().trim(),
-            ta_name : this.$('#ta_task_name').val().trim(),
-            ta_description : this.$('#ta_task_description').val().trim()
+            ta_project : jQuery('#ta_project_list').val().trim(),
+            ta_name : jQuery('#ta_task_name').val().trim(),
+            ta_description : jQuery('#ta_task_description').val().trim()
         });
-        this.$('#ta_task_name').val('');
-        this.$('#ta_task_description').val('');
+        jQuery('#ta_task_name').val('');
+        jQuery('#ta_task_description').val('');
     },
 
     ta_select_project: function () {
-        var task_select_html = _.template($('#task-select-template').html(), {
+        var task_select_html = _.template(jQuery('#task-select-template').html(), {
             tasks : app.Tasks.toJSON(),
-            project: this.$('#ta_project_list').val().trim()
+            project: jQuery('#ta_project_list').val().trim()
         });
-        this.$('#ta_task_list').html(task_select_html);
+        jQuery('#ta_task_list').html(task_select_html);
     }
 });
