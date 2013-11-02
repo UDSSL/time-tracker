@@ -4,9 +4,7 @@
     <?php do_action('udssl_headtop'); ?>
     <title><?php _e('Payment Tracker', 'udssl') ?> | <?php _e('UDSSL Time Tracker', 'udssl') ?></title>
     <meta name="Description" content="<?php _e('Payment Tracker for WordPress', 'udssl') ?>">
-    <?php do_action('udssl_bootstrap'); ?>
-    <?php do_action('udssl_backbone'); ?>
-    <?php do_action('udssl_head_enqueue'); ?>
+    <?php wp_head(); ?>
 </head>
 <body>
     <?php $options = get_option('udssl_tt_options'); ?>
@@ -114,6 +112,7 @@
         </div>
     </div> <!-- /container -->
     <?php include_once UDSSL_TT_PATH . 'app/templates/_templates.php'; ?>
+    <?php wp_footer(); ?>
     <?php do_action('udssl_payment_tracker'); ?>
 </body>
 </html>

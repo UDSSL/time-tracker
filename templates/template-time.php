@@ -4,9 +4,7 @@
     <?php do_action('udssl_headtop'); ?>
     <title><?php _e('UDSSL Time Tracker', 'udssl') ?> | <?php _e('Track Your Time', 'udssl') ?></title>
     <meta name="Description" content="<?php _e('UDSSL Time Tracker from UDSSL', 'udssl') ?>">
-    <?php do_action('udssl_bootstrap'); ?>
-    <?php do_action('udssl_backbone'); ?>
-    <?php do_action('udssl_head_enqueue'); ?>
+    <?php wp_head(); ?>
 </head>
 <body class="time-tracker">
     <?php $options = get_option('udssl_tt_options'); ?>
@@ -264,6 +262,7 @@
         <a href="#new-task" class="btn"><?php _e('New Task', 'udssl') ?></a>
         <a href="#menu" class="btn"><?php _e('Menu', 'udssl') ?></a>
     </div>
+    <?php wp_footer(); ?>
     <?php do_action('udssl_time_tracker'); ?>
 </body>
 </html>
