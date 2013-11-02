@@ -8,34 +8,23 @@ Stable tag: 0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-UDSSL Time Tracker helps you to precisely track your time. Charts allows
-you to visualize how your time is spent and helps you to be more productive.
+UDSSL Time Tracker helps you to precisely track your time. Charts allows you to visualize how your time is spent and helps you to be more productive.
 
 == Description ==
 
-UDSSL Time Tracker helps you to track your time easily with an intuitive interface. You
-can easily track your time with a few clicks. Using presets you can track frequent tasks instantly.
-Once you setup your tasks, projects and categories, you only have to enter an optional description
-on how a particular time period is spent.
+UDSSL Time Tracker helps you to track your time easily with an intuitive interface. You can easily track your time with a few clicks. Using presets you can track frequent tasks instantly.  Once you setup your tasks, projects and categories, you only have to enter an optional description on how a particular time period is spent.
 
 = Payment Tracker =
 
-Payment Tracker allows you to keep a record of your earnings. Once the payment
-is assigned to a task, that particular task is removed from time tracker interface
-select boxes. You can't record time for a paid task. You should start a new
-task for new work.
+Payment Tracker allows you to keep a record of your earnings. Once the payment is assigned to a task, that particular task is removed from time tracker interface select boxes. You can't record time for a paid task. You should start a new task for new work.
 
 = JSON API =
 
-UDSSL Time Tracker front interface is built as a Backbone JS application. Backbone app uses the
-JSON API to manage your time data. The JSON API is restricted to logged-in users by default. You can use the API in any
-other custom plugin as a logged in user. Further, you can make the API public and
-use it remotely if required.
+UDSSL Time Tracker front interface is built as a Backbone JS application. Backbone app uses the JSON API to manage your time data. The JSON API is restricted to logged-in users by default. You can use the API in any other custom plugin as a logged in user. Further, you can make the API public and use it remotely if required.
 
 = Extra Information =
 
-UDSSL site contains additional information about this plugin. Visit UDSSL Time Tracker
-website for more information.
+UDSSL site contains additional information about this plugin. Visit UDSSL Time Tracker website for more information.
 
 Visit [UDSSL Time Tracker](http://udssl.com/udssl-time-tracker/) Website.
 
@@ -49,9 +38,7 @@ Visit [UDSSL Time Tracker](http://udssl.com/udssl-time-tracker/) Website.
 
 = Does UDSSL Time Tracker come with sample data to get started? =
 
-Yes, sample data is automatically installed on plugin activation.
-Sample data installation is done after automatic table creation on
-activation.
+Yes, sample data is automatically installed on plugin activation.  Sample data installation is done after automatic table creation on activation.
 
 = What can be done with collected time data? =
 
