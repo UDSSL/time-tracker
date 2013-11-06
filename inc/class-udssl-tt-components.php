@@ -10,7 +10,7 @@ class UDSSL_TT_Components{
         /**
          * UDSSL Time Tracker Action Links
          */
-        add_filter('plugin_action_links', array($this, 'action_links'));
+        add_filter('plugin_action_links', array($this, 'action_links'), 10, 2);
 
         /**
          * UDSSL Time Tracker Navigation
@@ -21,10 +21,12 @@ class UDSSL_TT_Components{
     /**
      * UDSSL Time Tracker Action Links
      */
-    function action_links($links){
-       $links[] = '<a href="'. get_admin_url(null, 'admin.php?page=manage-udssl-tt') .'">Settings</a>';
-       $links[] = '<a href="' . get_home_url() . '/time-tracker/" target="_blank">Tracker</a>';
-       return $links;
+    function action_links($links, $file){
+        if('udssl-time-tracker/index.php' == $file){
+            $links[] = '<a href="'. get_admin_url(null, 'admin.php?page=manage-udssl-tt') .'">' . __('Settings', 'udssl') . '</a>';
+            $links[] = '<a href="' . get_home_url() . '/time-tracker/" target="_blank">' . __('Tracker', 'udssl') . '</a>';
+        }
+        return $links;
     }
 
     /**
