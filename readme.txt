@@ -4,7 +4,7 @@ Donate link: http://udssl.com/donate/
 Tags: time tracker, time management, payment tracking, time, payments, tracking
 Requires at least: 3.0
 Tested up to: 3.7.1
-Stable tag: trunk
+Stable tag: 0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -72,6 +72,11 @@ Please contact UDSSL for discuss the possibility of translating this plugin to y
 4. UDSSL Time Tracker Tamil Language
 
 == Changelog ==
+
+= 0.2 =
+
+* Fixed plugin action links application to all plugin entries.
+* Time slot preset administration interface was improved for usability.
 
 = 0.1 =
 

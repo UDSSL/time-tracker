@@ -66,10 +66,8 @@ add_settings_section(
 function save_reset_callback(){
     echo '<input name="udssl_tt_options[save_preset]"
         type="submit" class="button-primary" value="' . esc_attr__('Save Preset', 'udssl') .'" />';
-    echo ' <input name="udssl_tt_options[delete_preset]"
-        type="submit" class="button-secondary" value="' . esc_attr__('Delete', 'udssl') .'" />';
     echo ' <input name="udssl_tt_options[reset_presets]"
-        type="submit" class="button-secondary" value="' . esc_attr__('Reset', 'udssl') .'" />';
+        type="submit" class="button-secondary" value="' . esc_attr__('Load Default Presets', 'udssl') .'" />';
 }
 
 /**
@@ -90,16 +88,22 @@ function current_presets_callback(){
                 <th>Category</th>
                 <th>Project</th>
                 <th>Task</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>';
 
     foreach($options['presets'] as $preset){
+        $delete_name = 'delete_preset' . $preset['name'];
+        $delete_button = ' <input name="udssl_tt_options[' . $delete_name . ']"
+            type="submit" class="button-secondary" value="' . esc_attr__('Delete', 'udssl') .'" />';
+
 		echo '<tr>
 			<td class="row-title"><label for="tablecell">' . $preset['name'] . '</label></td>
 			<td>' . $preset['category'] . '</td>
 			<td>' . $preset['project'] . '</td>
 			<td>' . $preset['task'] . '</td>
+			<td>' . $delete_button . '</td>
 		</tr>';
     }
 
@@ -110,6 +114,7 @@ function current_presets_callback(){
                 <th>Category</th>
                 <th>Project</th>
                 <th>Task</th>
+                <th>Action</th>
             </tr>
         </tfoot>
     </table>';

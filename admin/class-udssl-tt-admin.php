@@ -210,22 +210,25 @@ class UDSSL_TT_Admin{
                 'project' => sanitize_text_field($input['presets']['project']),
                 'task' => sanitize_text_field($input['presets']['task'])
             );
-            $message = 'Preset Saved';
+            $message = __('Preset Saved', 'udssl');
             $type = 'updated';
         }
 
         /**
          * Delete Preset
          */
-  		if(isset($input['delete_preset'])){
-            $name = sanitize_text_field($input['presets']['name']);
-            if(isset($output['presets'][$name])){
-                unset($output['presets'][$name]);
-                $message = 'Preset Saved';
-            } else {
-                $message = 'No Preset Fount (' . $name . ')';
+        foreach($options['presets'] as $preset){
+            $delete_name = 'delete_preset' . $preset['name'];
+            if(isset($input[$delete_name])){
+                $name = $preset['name'];
+                if(isset($output['presets'][$name])){
+                    unset($output['presets'][$name]);
+                    $message = __('Preset Deleted', 'udssl');
+                } else {
+                    $message = __('No Preset Found', 'udssl');
+                }
+                $type = 'updated';
             }
-            $type = 'updated';
         }
 
         /**
@@ -233,7 +236,7 @@ class UDSSL_TT_Admin{
          */
   		if(isset($input['reset_presets'])){
             $output['presets'] = $defaults['presets'];
-            $message = 'Presets Reset';
+            $message = __('Presets Reset', 'udssl');
             $type = 'updated';
         }
 
@@ -242,7 +245,7 @@ class UDSSL_TT_Admin{
          */
   		if(isset($input['save_settings'])){
             $output['settings']['block_visitors'] = (bool) $input['settings']['block_visitors'];
-            $message = 'Settings Saved';
+            $message = __('Settings Saved', 'udssl');
             $type = 'updated';
         }
 
@@ -251,7 +254,7 @@ class UDSSL_TT_Admin{
          */
   		if(isset($input['reset_settings'])){
             $output['settings'] = $defaults['settings'];
-            $message = 'Settings Reset';
+            $message = __('Settings Reset', 'udssl');
             $type = 'updated';
         }
 
