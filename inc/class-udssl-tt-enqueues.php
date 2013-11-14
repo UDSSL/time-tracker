@@ -4,9 +4,9 @@
  */
 class UDSSL_TT_Enqueues{
     /**
-     * Constructor
+     * Enqueue
      */
-    function __construct(){
+    function enqueue(){
         /**
          * Twitter Bootstrap
          */
@@ -45,7 +45,7 @@ class UDSSL_TT_Enqueues{
      * Enqueue Twitter Bootstrap
      */
     function bootstrap(){
-        wp_enqueue_style('bootstrap', UDSSL_TT_URL . 'lib/bootstrap/css/bootstrap.min.css');
+        wp_enqueue_style('bootstrap-style', UDSSL_TT_URL . 'lib/bootstrap/css/bootstrap.min.css');
         wp_enqueue_style('bootstrap-responsive', UDSSL_TT_URL . 'lib/bootstrap/css/bootstrap-responsive.min.css');
         wp_enqueue_script('bootstrap-js', UDSSL_TT_URL . 'lib/bootstrap/js/bootstrap.js', array('jquery'), null, true);
     }

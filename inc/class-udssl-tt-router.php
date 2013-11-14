@@ -36,6 +36,12 @@ class UDSSL_TT_Router{
 
         do_action('udssl_tt_router_redirect');
 
+        /**
+         * Enqueue Scripts
+         */
+        global $udssl_tt;
+        $udssl_tt->enqueues->enqueue();
+
         $query_var = $wp_query->query_vars['router'];
         if ( $query_var == 'time_tracker' ) {
             require UDSSL_TT_PATH . 'templates/template-time.php';
