@@ -3,7 +3,7 @@
  * Plugin Name: UDSSL Time Tracker
  * Plugin URI: http://udssl.com/udssl-time-tracker/
  * Description: UDSSL Time Tracker. Track your time easily. View graphs of time data.
- * Version: 0.1
+ * Version: 0.2
  * Author: Praveen Dias
  * Author URI: http://udssl.com/praveen-chathuranga-dias/
  * Text Domain: udssl
